@@ -1,6 +1,6 @@
 # wkframes
 
-[English](README.md) · 繁體中文
+[English](README.md) · 繁體中文 · [简体中文](README.zh-CN.md)
 
 **用腳本操作頁面，把 WKWebView 真正畫在螢幕上的樣子，一格一格錄下來。**
 

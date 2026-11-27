@@ -1,6 +1,6 @@
 # wkframes
 
-English · [繁體中文](README.zh-TW.md)
+English · [繁體中文](README.zh-TW.md) · [简体中文](README.zh-CN.md)
 
 **Record what a WKWebView really shows, frame by frame, while a script drives the page.**
 
