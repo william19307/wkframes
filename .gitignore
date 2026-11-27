@@ -1,0 +1,5 @@
+.build/
+.swiftpm/
+wkframes-out/
+*.mp4
+.DS_Store

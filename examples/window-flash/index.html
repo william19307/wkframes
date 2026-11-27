@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Window flash</title>
+<style>
+  /* the page's colour lives on the page element, not on <html>: fine in a browser (its canvas is white), but in an
+     app whose web view draws no background (drawsBackground = false) the window shows through wherever no page is */
+  html, body { margin: 0; height: 100%; background: transparent; }
+  body { font: 14px/20px -apple-system, system-ui, sans-serif; color: #18181b; }
+  #root { height: 100%; }
+  .page { height: 100%; padding: 32px 40px; box-sizing: border-box; background: #f7f7f8; }
+  .page h1 { margin: 0 0 16px; font-size: 20px; }
+  button { font: inherit; padding: 4px 12px; border-radius: 6px; border: 1px solid #d4d4d8; background: #fff; }
+  /* the fix (?fixed): the colour on <html> as well, so a gap between pages is never the window */
+  .fixed, .fixed body { background: #f7f7f8; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+  if (new URLSearchParams(location.search).has("fixed")) document.documentElement.classList.add("fixed");
+  const root = document.getElementById("root");
+  const show = (title) => { root.innerHTML = `<div class="page"><h1>${title}</h1><button id="next">Next page</button></div>`;
+    document.getElementById("next").addEventListener("click", next); };
+  // like a lazily loaded route: the old page goes at once, the new one arrives when its code has loaded
+  const next = () => { root.innerHTML = ""; setTimeout(() => show("Settings"), 250); };
+  show("Home");
+</script>
+</body>
+</html>
