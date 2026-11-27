@@ -1,5 +1,7 @@
 # wkframes
 
+English · [繁體中文](README.zh-TW.md)
+
 **Record what a WKWebView really shows, frame by frame, while a script drives the page.**
 
 For Mac apps whose interface is a web page inside a native window. Some bugs only happen there: not in Chrome, not in
